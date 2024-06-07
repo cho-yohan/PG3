@@ -1,45 +1,59 @@
-#include <stdio.h>
 #include <iostream>
-#include <list>
-
 using namespace std;
 
-int main() {
+// 自作クラス
+class Enemy {
+public:
+	void Update();
 
-	list<const char*> station { 
-		"Komagome", "Tabata", "Nippri", "Uguisudani", "Ueno", 
-		"Okachimachi", "Akihabara", "Kanda", "Tokyo", "Yurakucho", 
-		"Shimbashi", "Hamamastucho", "Tamachi", "Shinagawa"
-	};
+	void Func1();
+	void Func2();
+	void Func3();
 
-	for (list<const char*>::iterator itr = station.begin(); itr != station.end(); itr++) {
-		cout << *itr << endl;
+	// メンバ関数ポインタのテーブル
+	static void (Enemy::*table[])();
+
+private:
+	// メンバ関数ポインタのテーブルを参照するインデックス
+	int index = 0;
+};
+
+void Enemy::Func1() {
+	cout << "敵の接近！" << endl;
+}
+
+void Enemy::Func2() {
+	cout << "敵の攻撃！" << endl;
+}
+
+void Enemy::Func3() {
+	cout << "敵の後退！" << endl;
+}
+
+void Enemy::Update() {
+
+	// 関数ポインタのテーブルから関数を実行
+	(this->*table[index])();
+	int a;
+	scanf_s("%d", &a);
+	if (a == 0) { 
+		index++;
 	}
+}
 
-	cout << endl;
-	
-	for (list<const char*>::iterator itr = station.begin(); itr != station.end(); itr++) {
-		if (strcmp(*itr, "Nippri") == 0) {
-			itr = station.insert(itr, "Nishi-Nippri");
-			++itr;
-		}
-	}
+// staticで宣言したメンバ関数ポインタテーブルの実体
+void (Enemy::*Enemy::table[])() = {
+  &Enemy::Func1, // インデックス番号0
+  &Enemy::Func2, // インデックス番号1
+  &Enemy::Func3  // インデックス番号2
+};
 
-	for (list<const char*>::iterator itr = station.begin(); itr != station.end(); itr++) {
-		cout << *itr << endl;
-	}
+int main()
+{
+	Enemy my;
 
-	cout << endl;
-
-	for (list<const char*>::iterator itr = station.begin(); itr != station.end(); itr++) {
-		if (strcmp(*itr, "Shinagawa") == 0) {
-			itr = station.insert(itr, "Takanawa_Gateway");
-			++itr;
-		}
-	}
-
-	for (list<const char*>::iterator itr = station.begin(); itr != station.end(); itr++) {
-		cout << *itr << endl;
+	while (1) {
+		my.Update();
 	}
 
 	return 0;
