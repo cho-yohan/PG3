@@ -1,60 +1,28 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-// 自作クラス
-class Enemy {
+template <typename T>
+
+class Min {
 public:
-	void Update();
+	T height;
+	T width;
 
-	void Func1();
-	void Func2();
-	void Func3();
+	Min(T height, T width) : height(height), width(width){}
 
-	// メンバ関数ポインタのテーブル
-	static void (Enemy::*table[])();
-
-private:
-	// メンバ関数ポインタのテーブルを参照するインデックス
-	int index = 0;
+	T Size() {
+		return height + width;
+	}
 };
 
-void Enemy::Func1() {
-	cout << "敵の接近！" << endl;
-}
+int main() {
 
-void Enemy::Func2() {
-	cout << "敵の攻撃！" << endl;
-}
+	Min<int> c1(3, 3);
+	Min<float> c2(3.0f, 3.0f);
+	Min<double> c3(3.0, 3.0);
 
-void Enemy::Func3() {
-	cout << "敵の後退！" << endl;
-}
-
-void Enemy::Update() {
-
-	// 関数ポインタのテーブルから関数を実行
-	(this->*table[index])();
-	int a;
-	scanf_s("%d", &a);
-	if (a == 0) { 
-		index++;
-	}
-}
-
-// staticで宣言したメンバ関数ポインタテーブルの実体
-void (Enemy::*Enemy::table[])() = {
-  &Enemy::Func1, // インデックス番号0
-  &Enemy::Func2, // インデックス番号1
-  &Enemy::Func3  // インデックス番号2
-};
-
-int main()
-{
-	Enemy my;
-
-	while (1) {
-		my.Update();
-	}
+	printf("%d\n", c1.Size());
+	printf("%f\n", c2.Size());
+	printf("%lf\n", c3.Size());
 
 	return 0;
 }
