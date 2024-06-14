@@ -1,2 +1,91 @@
 ﻿  main.cpp
+C:\PG3\main.cpp(16,30): warning C4244: 'return': 'Type2' から 'Type' への変換です。データが失われる可能性があります。
+C:\PG3\main.cpp(16,30): warning C4244:         with
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type2=double
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+C:\PG3\main.cpp(16,30): warning C4244:         and
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type=float
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+  C:\PG3\main.cpp(16,30):
+  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+  	C:\PG3\main.cpp(30,31):
+  	コンパイル対象の クラス テンプレート インスタンス化 'TemplateClass<float,double>' のリファレンスを確認してください
+  	C:\PG3\main.cpp(9,7):
+  	クラス テンプレート メンバー関数 'Type TemplateClass<Type,double>::Min(void)' のコンパイル中
+          with
+          [
+              Type=float
+          ]
+  		C:\PG3\main.cpp(37,117):
+  		'main' の 'TemplateClass<float,double>::Min' への最初の参照を参照してください
+  
+C:\PG3\main.cpp(16,30): warning C4244: 'return': 'Type2' から 'Type' への変換です。データが失われる可能性があります。
+C:\PG3\main.cpp(16,30): warning C4244:         with
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type2=int
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+C:\PG3\main.cpp(16,30): warning C4244:         and
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type=float
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+  C:\PG3\main.cpp(16,30):
+  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+  	C:\PG3\main.cpp(29,28):
+  	コンパイル対象の クラス テンプレート インスタンス化 'TemplateClass<float,int>' のリファレンスを確認してください
+  	C:\PG3\main.cpp(9,7):
+  	クラス テンプレート メンバー関数 'Type TemplateClass<Type,int>::Min(void)' のコンパイル中
+          with
+          [
+              Type=float
+          ]
+  		C:\PG3\main.cpp(36,108):
+  		'main' の 'TemplateClass<float,int>::Min' への最初の参照を参照してください
+  
+C:\PG3\main.cpp(16,30): warning C4244: 'return': 'Type2' から 'Type' への変換です。データが失われる可能性があります。
+C:\PG3\main.cpp(16,30): warning C4244:         with
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type2=double
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+C:\PG3\main.cpp(16,30): warning C4244:         and
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type=int
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+  C:\PG3\main.cpp(16,30):
+  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+  	C:\PG3\main.cpp(28,29):
+  	コンパイル対象の クラス テンプレート インスタンス化 'TemplateClass<int,double>' のリファレンスを確認してください
+  	C:\PG3\main.cpp(9,7):
+  	クラス テンプレート メンバー関数 'Type TemplateClass<Type,double>::Min(void)' のコンパイル中
+          with
+          [
+              Type=int
+          ]
+  		C:\PG3\main.cpp(35,111):
+  		'main' の 'TemplateClass<int,double>::Min' への最初の参照を参照してください
+  
+C:\PG3\main.cpp(16,30): warning C4244: 'return': 'Type2' から 'Type' への変換です。データが失われる可能性があります。
+C:\PG3\main.cpp(16,30): warning C4244:         with
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type2=float
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+C:\PG3\main.cpp(16,30): warning C4244:         and
+C:\PG3\main.cpp(16,30): warning C4244:         [
+C:\PG3\main.cpp(16,30): warning C4244:             Type=int
+C:\PG3\main.cpp(16,30): warning C4244:         ]
+  C:\PG3\main.cpp(16,30):
+  テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+  	C:\PG3\main.cpp(27,28):
+  	コンパイル対象の クラス テンプレート インスタンス化 'TemplateClass<int,float>' のリファレンスを確認してください
+  	C:\PG3\main.cpp(9,7):
+  	クラス テンプレート メンバー関数 'Type TemplateClass<Type,float>::Min(void)' のコンパイル中
+          with
+          [
+              Type=int
+          ]
+  		C:\PG3\main.cpp(34,110):
+  		'main' の 'TemplateClass<int,float>::Min' への最初の参照を参照してください
+  
+  LINK : 前回のインクリメンタル リンクで C:\PG3\x64\Debug\PG3 03-01.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   PG3 03-01.vcxproj -> C:\PG3\x64\Debug\PG3 03-01.exe
