@@ -26,13 +26,13 @@ public:
 
 int main(void) {
 
-	fpsGame* animal[2] = { new Valorant,new Apex };
+	fpsGame* game[2] = { new Valorant,new Apex };
 
-	animal[0]->Voice();
-	animal[1]->Voice();
+	game[0]->Voice();
+	game[1]->Voice();
 
-	delete animal[0];
-	delete animal[1];
+	delete game[0];
+	delete game[1];
 
 	return 0;
 }
