@@ -1,6 +1,6 @@
 ﻿#include <stdio.h>
 
-class fpsGame
+class FPS
 {
 public:
 	virtual void Voice() {
@@ -8,7 +8,7 @@ public:
 	};
 };
 
-class Valorant : public fpsGame
+class Valorant : public FPS
 {
 public:
 	void Voice() {
@@ -16,7 +16,7 @@ public:
 	};
 };
 
-class Apex : public fpsGame
+class Apex : public FPS
 {
 public:
 	void Voice() {
@@ -26,7 +26,7 @@ public:
 
 int main(void) {
 
-	fpsGame* game[2] = { new Valorant,new Apex };
+	FPS* game[2] = { new Valorant,new Apex };
 
 	game[0]->Voice();
 	game[1]->Voice();
