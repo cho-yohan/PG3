@@ -1,59 +1,52 @@
-#include <stdio.h>
+#include <Novice.h>
 
-class IShape
-{
-public:
-	virtual void Size() = 0;
-	virtual void Draw() = 0;
+const char kWindowTitle[] = "GC2C_チョ_ヨハン";
 
-protected:
-	float size;
-	float radius;
-};
+// Windowsアプリでのエントリーポイント(main関数)
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
-class Circle :public IShape
-{
-public:
-	void Size();
-	void Draw() { printf("�ʐ� %f\n", size); };
-};
+	// ライブラリの初期化
+	Novice::Initialize(kWindowTitle, 1280, 720);
 
-class Rectangle :public IShape
-{
-public:
-	void Size() override;
-	void Draw() { printf("�ʐ� %f\n", size); };
-};
+	// キー入力結果を受け取る箱
+	char keys[256] = {0};
+	char preKeys[256] = {0};
 
-void IShape::Size() {}
+	// ウィンドウの×ボタンが押されるまでループ
+	while (Novice::ProcessMessage() == 0) {
+		// フレームの開始
+		Novice::BeginFrame();
 
-void Circle::Size()
-{
-	radius = 5.0f;
-	printf("�~�̔��a %f\n", radius);
-	size = radius * radius * 3.14f;
-}
+		// キー入力を受け取る
+		memcpy(preKeys, keys, 256);
+		Novice::GetHitKeyStateAll(keys);
 
+		///
+		/// ↓更新処理ここから
+		///
 
-void Rectangle::Size()
-{
-	radius = 5.0f;
-	printf("��`�̔��a %f\n", radius);
-	size = radius * 2.0f * radius * 2.0f;
-}
+		///
+		/// ↑更新処理ここまで
+		///
 
-int main(void) {
+		///
+		/// ↓描画処理ここから
+		///
 
-	IShape* ishape[2] = { new Circle ,new Rectangle };
+		///
+		/// ↑描画処理ここまで
+		///
 
-	ishape[0]->Size();
-	ishape[1]->Size();
+		// フレームの終了
+		Novice::EndFrame();
 
-	ishape[0]->Draw();
-	ishape[1]->Draw();
+		// ESCキーが押されたらループを抜ける
+		if (preKeys[DIK_ESCAPE] == 0 && keys[DIK_ESCAPE] != 0) {
+			break;
+		}
+	}
 
-	delete ishape[0];
-	delete ishape[1];
-
+	// ライブラリの終了
+	Novice::Finalize();
 	return 0;
 }
