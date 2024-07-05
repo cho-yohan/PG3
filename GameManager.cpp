@@ -9,7 +9,6 @@ GameManager::GameManager()
 	currentSceneNo_ = TITLE;
 }
 
-
 GameManager::~GameManager()
 {
 
@@ -25,7 +24,7 @@ int GameManager::Run(char* keys, char* preKeys)
 		Novice::GetHitKeyStateAll(keys);
 
 		prevSceneNo_ = currentSceneNo_;
-		currentSceneNo_ = sceneArr_[currentSceneNo_]->GetScene();
+		currentSceneNo_ = sceneArr_[currentSceneNo_]->GetSceneNo();
 
 		if (prevSceneNo_ != currentSceneNo_)
 		{
