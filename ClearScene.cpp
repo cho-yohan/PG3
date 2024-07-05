@@ -1,9 +1,18 @@
 #include <Novice.h>
 #include "ClearScene.h"
 
+void ClearScene::Init()
+{
+}
+
 void ClearScene::Update(char* keys, char* preKeys)
 {
-	if (preKeys[DIK_ESCAPE] == 0 && keys[DIK_ESCAPE] != 0) {
-		sceneNo = CLEAR;
+	if (!preKeys[DIK_RETURN] && keys[DIK_RETURN]) {
+		sceneNo = TITLE;
 	}
+}
+
+void ClearScene::Draw()
+{
+	Novice::DrawBox(0, 0, 1280, 720, 0.0f, 0xffff0064, kFillModeSolid);
 }
